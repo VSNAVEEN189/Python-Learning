@@ -1,0 +1,14 @@
+#Data formatting
+For renaming the columns - df.rename(columns = {"Column name":"replaceable variable"})
+For permanent change in the column - df.rename(columns = {"E":"Multiples 2"}, inplace = True)
+For checking the data types - df.dtypes
+For converting data types - df["Column name"]=df["Column name"].astype("int")
+
+#Data normalization
+Normalised -  range are same stable comaprission is easy 
+Not normalised - Range is not specified 
+
+Methods 
+Simple feature scaling - calculated mathematically to get a new value = Dividing old value by max value
+Min-max method - calcualtes new value BY old-min divide by max-min
+Z SCORE/Standard score method - gets new value by old-mean value divide by standard of deviation range is -3 to +3
