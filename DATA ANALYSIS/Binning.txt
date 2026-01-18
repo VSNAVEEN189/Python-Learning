@@ -1,0 +1,13 @@
+Binning- It just groups values into bins and also it converts numerical data to categorical data
+even categorical to numerical While converting any value use numpy
+
+pd.cut to sort the data
+
+#NUMERIC TO CATEGORICAL
+import numpy as np
+bins = np.linspace(min(df["Length"]),max(df["Length"]),4)
+group_names = ["Low","Medium","High"]
+df["Length-binned"] = pd.cut(df["Length"],bins,labels = group_names, include_lowest = True)
+
+# CATEGORICAL TO NUMERIC
+pd.get_dummies(df["Length"])
