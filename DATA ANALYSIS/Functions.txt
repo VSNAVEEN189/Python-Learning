@@ -16,6 +16,11 @@ grp.aggregate(np.sum)
 Finding the unique values in dataframe 
 df_10.groupby("A")["B"].nunique() 
 
+For group size
+grp.size()
+
+For group count
+grp.count()
 ================================================================================
 
 #PIVOT
