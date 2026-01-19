@@ -1,0 +1,18 @@
+# BOX PLOT - using seaborn module
+
+import seaborn as sns
+sns.boxplot(x = "Length", y = "E", data = df)
+
+========================================================
+
+# Scatter plot  - Using matplotlib and pyplot 
+import matplotlib.pyplot as plt
+
+x = df["Length"]
+y = df["E"]
+
+plt.scatter(x,y)
+plt.title("scatterplot along the x and y axis")
+
+plt.xlabel("Label")
+plt.ylabel("Width")
