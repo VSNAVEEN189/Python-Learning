@@ -1,0 +1,28 @@
+#Value counts - show how many times values occured in the column using
+index = pd.Index(df["Column name"])
+index.value_counts()
+
+==============================================================================
+
+#GROUPING OF COLUMN VALUES
+import numpy as np 
+grp = df.groupby("Column name")
+grp.aggregate(np.sum)
+
+for better spacing, arranging
+grp = df.groupby(["A","B"], as_index = False)
+grp.aggregate(np.sum)
+
+Finding the unique values in dataframe 
+df_10.groupby("A")["B"].nunique() 
+
+================================================================================
+
+#PIVOT
+Helps to arrange the table from data frame as per the users choice
+
+To get all the values 
+df_20.pivot(index = 'S.No', columns = 'A', values = ['B','C'])
+
+Intersact of two values
+df_20.pivot(index = 'A', columns = 'B', values = 'C')
