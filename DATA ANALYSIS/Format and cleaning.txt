@@ -11,4 +11,4 @@ Not normalised - Range is not specified
 Methods 
 Simple feature scaling - calculated mathematically to get a new value = Dividing old value by max value
 Min-max method - calcualtes new value BY old-min divide by max-min
-Z SCORE/Standard score method - gets new value by old-mean value divide by standard of deviation range is -3 to +3
+Z SCORE/Standard score method - gets new value by old-mean value divide by standard of deviation range is -3 to +3.
