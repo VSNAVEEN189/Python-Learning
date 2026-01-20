@@ -16,3 +16,58 @@ plt.title("scatterplot along the x and y axis")
 
 plt.xlabel("Label")
 plt.ylabel("Width")
+
+==========================================================
+
+#Heat map - Importing random value 
+import numpy as np 
+np.random.seed(0)
+import seaborn as sns
+
+uniform_data = np.random.rand(5,6)
+print(uniform_data)
+
+Setting up value - heat_map_2 = sns.heatmap(uniform_data, vmin = 0, vmax = 1)
+
+With datasets 
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+flights = sns.load_dataset("flights")
+
+flights = flights.pivot(
+    index="month",
+    columns="year",
+    values="passengers"
+)
+
+sns.heatmap(flights)
+plt.show()
+
+To get value in integer - heat_map_5 = sns.heatmap(flights, annot = True, fmt = "d")
+To get value in boolean - heat_map_5 = sns.heatmap(flights, annot = True, fmt = ".1f")
+To change the color scheme - heat_map_6 = sns.heatmap(flights, cmap = 'YlGnBu')
+To remove the side bar - heat_map_8 = sns.heatmap(flights, cbar = False)
+
+=======================================================================
+
+#ANNOVA - analysis of variance 
+Statistical comparission of groups 
+
+#CORELATION - Measures to what extent different variables are interdependent 
+
+using scatter plot in python it's positive
+flights = sns.load_dataset("flights")
+sns.regplot(x = "passengers", y = "year", data = flights)
+
+Two main parameters - 
+1. correlation co-efficient 
+It determines stregth of relationship between the variable 
+range from -1 to +1 , 0 is no relationship 
+
+2. P-Value
+It determines stregth whether result is significant or not 
+
+For checking the correlation 
+pearson_correlation = stats.pearsonr(flights['year'], flights['passengers'])
+print(pearson_correlation)
