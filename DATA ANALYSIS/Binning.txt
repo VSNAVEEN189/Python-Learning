@@ -5,9 +5,9 @@ pd.cut to sort the data
 
 #NUMERIC TO CATEGORICAL
 import numpy as np
-bins = np.linspace(min(df["Length"]),max(df["Length"]),4)
+bins = np.linspace(min(df["Column name"]),max(df["Column name"]),4)
 group_names = ["Low","Medium","High"]
-df["Length-binned"] = pd.cut(df["Length"],bins,labels = group_names, include_lowest = True)
+df["column name-binned"] = pd.cut(df["Column name"],bins,labels = group_names, include_lowest = True)
 
 # CATEGORICAL TO NUMERIC
-pd.get_dummies(df["Length"])
+pd.get_dummies(df["Column name"])
