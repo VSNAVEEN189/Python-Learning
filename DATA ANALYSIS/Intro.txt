@@ -48,7 +48,7 @@ Provides consice summary of data frame - df.info()
 For displaying the columns in data frame with data type - df.columns
 For preprocessing - converting raw data into summarize form of data
 
-Changing or creating headers
+# Changing or creating headers.
 headers = ["S.No", "Even","odd","Multiples 5", "Multiples 3", "Multiples 4"]
 df.columns = headers
 df.head(5)
