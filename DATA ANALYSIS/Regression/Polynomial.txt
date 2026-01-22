@@ -1,0 +1,29 @@
+# Polynomial regression 
+import numpy as np 
+
+x = np.random.randn(100)
+y = np.random.randn(100)
+
+f = np.polyfit(x, y, 3)
+p = np.poly1d(f)
+
+======================================================================
+
+ Multi-dimensional Polynomial Features
+
+from sklearn.preprocessing import PolynomialFeatures
+import seaborn as sns
+
+# Load dataset
+flights = sns.load_dataset("flights")
+
+# Select multiple input columns correctly
+X = flights[['year', 'passengers']]
+
+# Create PolynomialFeatures object
+pr = PolynomialFeatures(degree=2, include_bias=False)
+
+# Transform the data
+x_poly = pr.fit_transform(X)
+
+print(x_poly)
