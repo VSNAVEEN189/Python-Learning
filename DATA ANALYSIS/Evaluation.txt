@@ -1,0 +1,25 @@
+# sample evaluatiion
+# 2 parameters mean square error - average between estimated value and the actual value
+# STEPS TO FOLLOW
+# subtracting
+# squaring
+# mean/average = adding all the errors divide by no.of samples
+
+==============================================================================
+
+# Mean squared error
+from sklearn.metrics import mean_squared_error
+flights = sns.load_dataset("flights")
+mean_squared_error(flights['year'], flights['passengers'])
+mean_squared_error(flights['year'], flights['passengers'], multioutput = 'raw_values')
+mean_squared_error(flights['year'], flights['passengers'], multioutput = 'uniform_average')
+
+===========================================================================
+
+# r-squared - determines how close the data is fited regression line
+# Values lies between 0 and 1
+x = flights[['year']]
+y = flights[['passengers']]
+ln = LinearRegression()
+ln.fit(x, y)
+ln.score(x, y)
