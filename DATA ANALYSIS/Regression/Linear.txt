@@ -1,0 +1,35 @@
+#SIMPLE LINEAR REGRESSION
+
+Have single independent variable
+Modelling the relationship from the data 
+Initially we have predictor variable(Independent) x and target variable(dependent) y
+
+
+from sklearn.linear_model import LinearRegression
+
+lm = LinearRegression()
+x = flights[['year']]
+y = flights['passengers']
+# Define variables 
+lm.fit(x,y)  #Make it linear 
+Yhat = lm.predict(x)
+print(Yhat)  #Predict the value
+lm.intercept_    #To find the intercept
+lm.coef_    #To fing coefficient
+
+#MULTIPLE LINEAR REGRESSION
+
+
+Have multiple independent variable 
+Multiple Linear Regression looks at many causes, one outcome.
+
+Instead of one X, you have many Xs:
+
+from sklearn.linear_model import LinearRegression
+lm = LinearRegression()
+X = df[['A','B', 'C']]    #Define the variable
+Y = df['D']
+#Train the model
+lm.fit(X, Y)
+#Predication
+Yhat = lm.predict(X)
