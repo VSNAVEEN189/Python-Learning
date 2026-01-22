@@ -17,6 +17,8 @@ print(Yhat)  #Predict the value
 lm.intercept_    #To find the intercept
 lm.coef_    #To fing coefficient
 
+======================================================================================
+
 #MULTIPLE LINEAR REGRESSION
 
 
