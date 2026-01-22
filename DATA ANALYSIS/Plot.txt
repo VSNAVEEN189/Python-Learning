@@ -3,7 +3,7 @@
 import seaborn as sns
 sns.boxplot(x = "Length", y = "E", data = df)
 
-========================================================
+==========================================================================
 
 # Scatter plot  - Using matplotlib and pyplot 
 import matplotlib.pyplot as plt
@@ -17,7 +17,7 @@ plt.title("scatterplot along the x and y axis")
 plt.xlabel("Label")
 plt.ylabel("Width")
 
-==========================================================
+================================================================================
 
 #Heat map - Importing random value 
 import numpy as np 
@@ -49,7 +49,7 @@ To get value in boolean - heat_map_5 = sns.heatmap(flights, annot = True, fmt = 
 To change the color scheme - heat_map_6 = sns.heatmap(flights, cmap = 'YlGnBu')
 To remove the side bar - heat_map_8 = sns.heatmap(flights, cbar = False)
 
-=======================================================================
+=============================================================================
 
 #ANNOVA - analysis of variance 
 Statistical comparission of groups 
@@ -71,3 +71,45 @@ It determines stregth whether result is significant or not
 For checking the correlation 
 pearson_correlation = stats.pearsonr(flights['year'], flights['passengers'])
 print(pearson_correlation)
+
+==================================================================================
+
+# Regression plot
+
+Combines of both scatter plot 
+shows direction of relationship
+states relationship between 2 variables (similar to scatter plot)
+# vertical-axis = dependent
+# horizontal-axis = independent
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.regplot(x = "year", y = "passengers", data = flights)
+plt.ylim(0,)
+
+===========================================================================
+
+# Residual plot
+Use to find problems with regression it represents the error
+# Residual value - it is a measure of how much regression line vertically misses a data point.
+
+==============================================================================
+
+# Distribuition plot
+It displays range of numeric values which are plotted against the dimension
+import seaborn as sns
+import numpy as np 
+
+np.random.seed(0)
+x = np.random.randn(100)
+ax_1 = sns.distplot(x)
+
+# KERNEL DESTINY ESTIMATE
+ax_3 = sns.distplot(x, fit = norm, kde = False)
+
+# Color change
+sns.set_color_codes()
+ax_5 = sns.distplot(x, color = 'r')
+
+# Change the theme
+sns.set(style = 'dark')
+ax_6 = sns.distplot(x, color = 'g')
