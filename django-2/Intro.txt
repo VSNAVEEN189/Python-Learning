@@ -1,0 +1,33 @@
+It is a python based web framework collection of libraries to work on web devellopment 
+helps to create applications in a fast, secure, scalable way. 
+Follows the model template view (MTV)
+Model - Handles data layer      structure od the data,logic
+View - Handles business logic     Internal fuctionality
+Template - Handles the presentation layer     What user sees 
+
+Popular companies use -Instagram, Pinterest, Mozilla, Spotify.
+
+Installing django
+should have pip version 25.3
+pip install django 
+To find the subcommands: django-admin
+
+To create a folder using python mkdir folder name
+
+
+Django project structure
+
+To start a new project: django-admin startproject project name
+While we create project folder some files are created inside it.
+
+Manage.py helps to run project specific commands are default
+_init_.py marks the file or folder as a python package 
+All other files in the folder are python modules 
+asgi.py and wsgi.py files are configuration files helps in deployment to the server and shows in the internet 
+These files can be modified when required 
+settings.py - Contains global settings, Helps to configure the behaviour of the Django application  
+urls.py - For adding new pages, pages are meant to be registered first loading urls 
+
+# Staring the local development server
+python manage.py runserver helps to launch the server locally 
+ctrl + c quits the application
