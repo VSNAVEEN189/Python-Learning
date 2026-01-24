@@ -1,0 +1,20 @@
+Python files or modules are called as apps
+Code is written in those files 
+
+To start app: python manage.py startapp appname
+creates a new folder
+Building blocks of project provides specific functionality or features to are project
+
+Can create multiple applications
+
+app 1 folder contain 
+migrations folder
+_init_.py makes this folder as a package(Empty package) useful for databases and data modules
+
+files
+admin.py - Useful in built in django features
+apps.py - Configures app whicch we created to identify the app  connecting multiple apps
+models.py - Database adding data modules
+test.py - Writing test cases
+views.py - Used to write logic for our app, contents to show to our users website.
+
