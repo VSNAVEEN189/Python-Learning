@@ -1,0 +1,11 @@
+Urls - They are responsible to reach the website to access the particular page 
+
+Have different urls for different pages, different response is being send to the users website
+
+Each urls is maped to certain action 
+
+Views - actions that trigged from the urls, Have main or core logic http gets executed.
+It is a fuction in django 
+
+They works to together 
+
