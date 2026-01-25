@@ -9,3 +9,23 @@ It is a fuction in django
 
 They works to together 
 
+=================================================================================
+
+#Dynamic path segements
+We have to keep on adding urls here for every view we create in views.py of blogs app
+
+Used to capture the blog parameter 
+Same identifier as used in urls.py should be used in the view function parameter
+Blogpost views will be called for every blog there , In future to support more blogs by adding more elif conditions.
+
+===============================================================================
+
+#Path converters
+this basically converts the value entered in the url which comes to the path and passed as an argument
+
+Excepting strings
+<str:blog> This tells django that value entered here should be treated or converted as a strings
+
+    path("allposts/<int:blog>", views.blog_post_by_number),   #It tells django to convert the given value to integer.
+
+It helps to write different logics of are url patterns depending on the dynamic segments
