@@ -29,3 +29,32 @@ Excepting strings
     path("allposts/<int:blog>", views.blog_post_by_number),   #It tells django to convert the given value to integer.
 
 It helps to write different logics of are url patterns depending on the dynamic segments
+
+====================================================================================
+
+#Slugs- A built-in path converter
+This can be used as a url segement 
+The url which contains alphabets,numbers,hypens are called Slugs no other special characters
+checks the url value has slugs format or not
+
+Getting html response adding h1 tags to all response and return fuction variable
+
+==========================================================================================
+
+Making code more dynamic
+# Making the code more dynamically using dictionary, We can keep on adding more blocks.
+blog_names = {
+    "python-intro": "<h1>Python Post</h1>",
+    "django-basics": "<h1>Django basics blog posts</h1>",
+    "python-oops": "<h1>Object Oriented Programming with python</h1>",
+    "regx": "<h1>Regular Expressions in Python</h1>"
+}
+
+ 
+Use
+    try:        #To avoiding the error if blog not found in dictionary
+        res = blog_names[blog]
+    except:    
+       return HttpResponseNotFound("<h1>Blog not found</h1>")
+    else:
+       return HttpResponseNotFound(res)
