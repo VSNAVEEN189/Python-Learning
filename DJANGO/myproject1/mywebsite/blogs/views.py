@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
+from django.urls import reverse
 # Create your views here.
 
 # Making the code more dynamically using dictionary, We can keep on adding more blocks.
@@ -14,7 +15,20 @@ def home_page(request):
     return HttpResponse("<h1>Home Page of our Blogs</h1>")
 
 def blogpost(request):
-    return HttpResponse("<h1>All blog posts!</h1>")
+    list_item = ""
+    blog_list = list(blog_names.keys())   #Getting all the keys from dictionary in form of list.
+    for b in blog_list: 
+        blog_path = reverse("blog-post", args=[b])  #Using reverse function to get the url of blog post dynamically
+        list_item += f'<li><a href="{blog_path}">{b.capitalize()}</a></li>'
+
+    res_data = f'<ul>{list_item}</ul>'
+    # """
+    # <ul>
+    #   <li><a href="/blogs/allposts/python-intro">Python Intro</a></li>
+    #   <li><a href="/blogs/allposts/django-basics">Django Basics</a></li>
+    # </ul>
+    # """
+    return HttpResponse(res_data)
 
 # def python_intro(request):
 #     return HttpResponse("Python Post of our Blogs")

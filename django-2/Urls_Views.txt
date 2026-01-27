@@ -58,3 +58,25 @@ Use
        return HttpResponseNotFound("<h1>Blog not found</h1>")
     else:
        return HttpResponseNotFound(res)
+
+========================================================================================
+href is used to create a link for the url 
+li is list item can keep on adding
+<li><a href="/blogs/allposts/python-intro">Python Intro</a></li>
+
+Make the code more dynamic
+def blogpost(request):
+    list_item = ""
+    blog_list = list(blog_names.keys())   #Getting all the keys from dictionary in form of list.
+    for b in blog_list: 
+        blog_path = reverse("blog-post", args=[b])  #Using reverse function to get the url of blog post dynamically
+        list_item += f'<li><a href="{blog_path}">{b.capitalize()}</a></li>'
+
+    res_data = f'<ul>{list_item}</ul>'
+    # """
+    # <ul>
+    #   <li><a href="/blogs/allposts/python-intro">Python Intro</a></li>
+    #   <li><a href="/blogs/allposts/django-basics">Django Basics</a></li>
+    # </ul>
+    # """
+    return HttpResponse(res_data)
