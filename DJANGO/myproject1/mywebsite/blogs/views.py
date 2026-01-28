@@ -12,7 +12,9 @@ blog_names = {
 }
 
 def home_page(request):
-    return HttpResponse("<h1>Home Page of our Blogs</h1>")
+    return render(request, "blogs/index.html")  #Directly rendering html template without loading it first.
+    # res_data = render_to_string("blogs/index.html")   #Rendering html template
+    # return HttpResponse(res_data)
 
 def blogpost(request):
     list_item = ""

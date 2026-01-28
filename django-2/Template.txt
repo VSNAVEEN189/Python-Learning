@@ -1,0 +1,41 @@
+for creating dynamic html files
+Are html files which output dynamic code
+
+========================================================
+from django.template.loader import render_to_string 
+This function render converts an input to string 
+
+We can make template content used by the views.py 
+in homepage function 
+Whenever home page is clicked the function is triggered
+def home_page(request):
+    res_data = render_to_string("blogs/index.html")   #Rendering html template
+    return HttpResponse(res_data)
+An html content is rendered and passed in output    
+
+In settings.py of my website need to add the file path to let django know abput the template using
+  'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            BASE_DIR / 'blogs' / 'templates'
+        ]
+In template section.
+
+===========================================================
+Registering DjangoTemplates
+
+Inside the app folders
+Don't need to add full path in dirs instead you can add app name in installed apps list
+App dirs has to be true 
+
+Outside the app folders
+For to add that global template we have to use 'DIRS': [],
+
+Why use app name in render_to_string 
+
+Creating subfolder using same name as apps
+it helps django to sort the templates from each app 
+
+instead to using render_to_string we can use - Render function
+return render(request, "blogs/index.html")  #Directly rendering html template without loading it first.
+ 
+ 
