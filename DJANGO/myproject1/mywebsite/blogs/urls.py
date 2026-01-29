@@ -11,5 +11,5 @@ urlpatterns = [
     # path("allposts/blog", views.blog_post),                #It tells django to handle any url after allposts/anything url
     # path("allposts/<int:blog>", views.blog_post_by_number),   #It tells django to convert the given value to integer.
     # path("allposts/<str:blog>", views.blog_post)            #It tells django to convert the given value to string.
-    path("allposts/<slug:blog>", views.blog_post, name="blog-post")            #It tells django to convert the given value to slug.
+    path("allposts/<str:blog>", views.blog_post, name="blog-post")            #It tells django to convert the given value to slug.
 ]    
