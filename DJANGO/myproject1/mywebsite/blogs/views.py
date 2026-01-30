@@ -8,7 +8,8 @@ blog_names = {
     "python-intro": "Python Post",
     "django-basics": "Django basics blog posts",
     "python-oops": "Object Oriented Programming with python",
-    "regx": "Regular Expressions in Python"
+    "regx": "Regular Expressions in Python",
+    "tkinter": None
 }
 
 def home_page(request):
@@ -19,18 +20,20 @@ def home_page(request):
 def blogpost(request):
     list_item = ""
     blog_list = list(blog_names.keys())   #Getting all the keys from dictionary in form of list.
-    for b in blog_list: 
-        blog_path = reverse("blog-post", args=[b])  #Using reverse function to get the url of blog post dynamically
-        list_item += f'<li><a href="{blog_path}">{b.capitalize()}</a></li>'
+    
+    return render(request, "blogs/allposts.html", {"blogs": blog_list})
+    # for b in blog_list: 
+    #     blog_path = reverse("blog-post", args=[b])  #Using reverse function to get the url of blog post dynamically
+    #     list_item += f'<li><a href="{blog_path}">{b.capitalize()}</a></li>'
 
-    res_data = f'<ul>{list_item}</ul>'
-    # """
-    # <ul>
-    #   <li><a href="/blogs/allposts/python-intro">Python Intro</a></li>
-    #   <li><a href="/blogs/allposts/django-basics">Django Basics</a></li>
-    # </ul>
-    # """
-    return HttpResponse(res_data)
+    # res_data = f'<ul>{list_item}</ul>'
+    # # """
+    # # <ul>
+    # #   <li><a href="/blogs/allposts/python-intro">Python Intro</a></li>
+    # #   <li><a href="/blogs/allposts/django-basics">Django Basics</a></li>
+    # # </ul>
+    # # """
+    # return HttpResponse(res_data)
 
 # def python_intro(request):
 #     return HttpResponse("Python Post of our Blogs")

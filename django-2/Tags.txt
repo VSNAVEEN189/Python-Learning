@@ -1,0 +1,9 @@
+For tag - Allows to run loops on the content 
+
+<!-- capfirst - it capitalizes the first letter of each word in a string -->
+
+urls tag - returns a absolute path reference equvalient to reverse function 
+Needs arguments additional arguments need space 
+
+If tag - Use for Conditional content
+Allows to write if statements in template
