@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+{% extends "blogs/base.html" %}
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our blog post home page</title>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>
+
+    {% block page_title %}    
+      Our blog post home page
+    {% endblock %}
+
+    {% block body_content %}
+       <h1>Welcome to my personal Blog Post</h2>
+       <h2>I write about Pyhton and related stuff</h2>   
+    {% endblock %}
+
+    <!-- </head>
 <body>
     <h1>Welcome to my personal blog post</h1>    
     <h2>I write about Python and related stuff</h2>
 </body>
-</html>
+</html> -->

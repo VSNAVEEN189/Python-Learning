@@ -1,19 +1,31 @@
-<!DOCTYPE html>
+{% extends "blogs/base.html" %}
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ blog_name|title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title> -->
+  
+  {% block page_title %}    
+    {{ blog_name|title}}
+  {% endblock %}  
+  
+<!-- </title>
 </head>
-<body>
+<body> -->
+
+{% block body_content %}
     <h1>{{ blog_name|title}} blog post</h1>
     {% if blog_text %}
       <h2>{{ blog_text }}</h2>   {# To fetch a special variable use {{ }} injecting dynamic content. #}
     {% else %}
       <h2>Blog is in progress.....</h2>
     {% endif %}
-</body>
-</html>
+{% endblock %}    
+
+
+<!-- </body>
+</html> -->
 
 
 <!-- title and add filter -->

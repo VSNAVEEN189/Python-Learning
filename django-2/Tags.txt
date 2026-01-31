@@ -6,4 +6,4 @@ urls tag - returns a absolute path reference equvalient to reverse function
 Needs arguments additional arguments need space 
 
 If tag - Use for Conditional content
-Allows to write if statements in template
+Allows to write if statements in template    

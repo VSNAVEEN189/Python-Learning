@@ -1,0 +1,11 @@
+Block - that allows on define a block that can later be used to inject the content
+The block has to end with keyword {% endblock %}
+
+Extends - To inherit one template in another template 
+we write the tag on top of the file {% extends "file name" %} 
+To help django find the file we need to tell the path in tag itself
+{% extends "../../../templates/base.html" %}
+
+         OR
+         
+In settings.py -> templates section -> add the file path in dirs .     
