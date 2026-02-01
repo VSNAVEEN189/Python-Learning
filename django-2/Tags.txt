@@ -7,3 +7,22 @@ Needs arguments additional arguments need space
 
 If tag - Use for Conditional content
 Allows to write if statements in template    
+
+===================================
+INCLUDE TAG 
+
+include tag - Loads the template and render it with a current context 
+including other templates within a template
+
+We are reusing the header navigation snippet across app specific template posts.html/allposts.html
+While include tag helps to include that snippet in any of our template 
+
+We can pass variable names also in header 
+############################################
+ADDITIONAL FEATURE WITH INCLUDE TAG
+WITH - 
+can pass additional context to the template using keyword argument with 
+with some values
+for eg:with active_page="Post"
+
+Very useful in django advance project
