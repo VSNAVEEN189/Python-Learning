@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.template.loader import render_to_string
+from django.http import Http404, HttpResponseNotFound
 from django.urls import reverse
 # Create your views here.
 
@@ -64,10 +65,15 @@ def blog_post(request, blog):
         res = blog_names[blog]
         return render(request, "blogs/posts.html", {
             "blog_text": res, "blog_name": process_blog_name(blog)})  #Rendering the template for blog post
-    except KeyError:    
-       return HttpResponseNotFound("<h1>Blog not found</h1>")
+    except Exception:  
+    #    res_data = render_to_string("404.html")  #Rendering the 404 template if blog not found in dictionary directly
+    #    return HttpResponseNotFound(res_data)
+    
+    # Straight forward we can use http404
+        Http404("404.html")
+        raise Http404()  # Raising 404 error if blog not found in dictionary
     # else:
-    #    return HttpResponseNotFound(res)
+    #    return HttpResponseNotFound(res_data)
 
 
 
