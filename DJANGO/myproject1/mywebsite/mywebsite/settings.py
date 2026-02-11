@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b!3dlplm+@u%j(1h65!yrqfg+s2rxxnzv-n-_wox#0(*)=kdg&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Set to True for local development so Django serves static files automatically.
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -118,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Tells Django where to look for static files (like CSS, JS, images) in our project
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]

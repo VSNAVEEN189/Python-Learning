@@ -5,7 +5,7 @@ Rule-sets
 css have some selector which helps to style of a particular html element
 
 django automatically looks for css file 
-
+=============================================================================
 To load the css file inside the template we need to use tag load 
 1. {% load static %}
 2. <link rel="stylesheet" href="contains link of file">
@@ -16,3 +16,13 @@ To add a link use static tag or an image
     <link rel="stylesheet" href="{% static 'blogs/app.css' %}">
 {% endblock %}
 
+css selectors that are used to target html elements
+============================================================================
+# Tells Django where to look for static files (like CSS, JS, images) in our project
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+to create a global static file by creating a ststic folder 
+inside folder creating styles.css
+then loading or using them in base.html template so it can be used in all the template
