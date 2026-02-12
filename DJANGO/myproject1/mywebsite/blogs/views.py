@@ -6,7 +6,7 @@ from django.urls import reverse
 
 # Making the code more dynamically using dictionary, We can keep on adding more blocks.
 blog_names = {
-    "python-intro": "Python Post",
+    "python-intro": "IntroPython Post",
     "django-basics": "Django basics blog posts",
     "python-oops": "Object Oriented Programming with python",
     "regx": "Regular Expressions in Python",
