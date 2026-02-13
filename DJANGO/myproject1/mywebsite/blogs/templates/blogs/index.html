@@ -33,7 +33,7 @@
         </header>
        </section>
 <!-- Featued post section -->
-       <section> 
+       <!-- <section> 
         <h2>Featured Posts</h2>
          <ul>
             <li>
@@ -46,7 +46,7 @@
                     </div>
                 </article>
             </li>
-<!-- Featured post -2 section -->
+Featured post -2 section
             <li>
                 <article>
                     <a href=""></a>
@@ -58,8 +58,19 @@
                 </article>
             </li>
          </ul>    
-       </section>
+       </section> -->
 
+       <!-- Want to run for loop on latest posts  -->
+    <section>
+        <h2>Featured Posts</h2>
+     <ul>
+       {% for blog in l_blogs %}
+           {% include "blogs/includes/posts.html" %}
+       {% endfor %}
+      </ul>
+    </section>
+
+    
     <section>
         <h2>About Me</h2>
          <p> The author has 10+ years of experience in software and application development.

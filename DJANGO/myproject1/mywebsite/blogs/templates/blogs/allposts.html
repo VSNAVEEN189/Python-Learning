@@ -14,19 +14,13 @@ All Posts
     <h2>All My Posts</h2>
     <!-- {% include "blogs/includes/header.html" with active_page="All Posts" %} -->
     <ul>
-        {% for blog in blogs %}
-            <li>
-                <article>
-                  <a href="{% url 'blog-post' blog=blog %}">{{ blog|capfirst }}</a></li> 
-                 <img src="{% static 'blogs/images/download.jpeg' %}" alt="Python" />   
-                <div>   
-                    <h3>Python Intro</h3>
-                    <p>Python is a high-level programming language</p>
-                </div>            
-                </article>  
-            </li>  
-        {% endfor %}
+    {% for blog in blogs %}
+            {% include "blogs/includes/posts.html" %}
+    {% endfor %}
     </ul>
  </section>
 
 {% endblock %}
+
+<!-- Inside html files to pass the key values we use .notations For example, in above code we are passing the list of dictionary to template and we can access the key values using dot notation. {{ blog.title }} will give us the title of the blog post.
+ We can also use {{ blog.slug }} to get the slug of the blog post and use it in url to navigate to individual blog post page. -->

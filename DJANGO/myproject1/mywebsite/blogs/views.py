@@ -1,3 +1,4 @@
+from datetime import date
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.http import Http404, HttpResponseNotFound
@@ -5,24 +6,76 @@ from django.urls import reverse
 # Create your views here.
 
 # Making the code more dynamically using dictionary, We can keep on adding more blocks.
-blog_names = {
-    "python-intro": "IntroPython Post",
-    "django-basics": "Django basics blog posts",
-    "python-oops": "Object Oriented Programming with python",
-    "regx": "Regular Expressions in Python",
-    "tkinter": None
-}
+# blog_names = {
+#     "python-intro": "IntroPython Post",
+#     "django-basics": "Django basics blog posts",
+#     "python-oops": "Object Oriented Programming with python",
+#     "regx": "Regular Expressions in Python",
+#     "tkinter": None
+# }
+
+blog_details = [
+    {
+        "slug": "python-intro",
+        "image": "Python.jpeg",
+        "date": date(2025, 10, 15),
+        "title": "Python Introduction",
+        "preview": """"Python is an open-source, high-level programming language that is used widely.
+        Applications of pyhton are software development, data science, AI & ML, etc""",
+        "Content": #Will be usedd in individual blog post page
+        """Python is a versatile, high-level programming language known for its simple, English-like syntax and interpreted nature, making it ideal for rapid development""",
+    }
+    ,
+    {
+        "slug": "django-basics",
+        "image": "django.jpeg",
+        "date": date(2025, 10, 20),
+        "title": "Django Basics",
+        "preview": """Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+        It follows the model-template-views (MTV) architectural pattern.""",
+        "Content":
+        """Django is a high-level Python web framework that promotes rapid development and clean, pragmatic design. It follows the model-template-views (MTV) architectural pattern, which is a variation of the traditional MVC pattern.""",
+    }
+    ,
+    {
+        "slug": "python-oops",
+        "image": "oops.png",
+        "date": date(2024, 10, 16),
+        "title": "Python OOPs",
+        "preview": """Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to structure code.
+        Python supports OOP principles such as encapsulation, inheritance, and polymorphism.""",
+        "Content":
+        """Object-oriented programming (OOP) is a programming paradigm that uses objects and classes to structure code. Python supports OOP principles such as encapsulation, inheritance, and polymorphism.""",
+    }
+    ,
+    {
+        "slug": "regx",
+        "image": "regex.jpeg",
+        "date": date(2025, 10, 19),
+        "title": "Regular Expressions in Python",
+        "preview": """Regular expressions (regex) are a powerful tool for pattern matching and text manipulation in Python.
+        The re module provides functions for working with regular expressions.""",
+        "Content":
+        """Regular expressions (regex) are a powerful tool for pattern matching and text manipulation in Python. The re module provides functions for working with regular expressions.""",
+    }
+]
+
 
 def home_page(request):
-    return render(request, "blogs/index.html")  #Directly rendering html template without loading it first.
+    sorted_blogs= sorted(blog_details, key=lambda post:post["date"], reverse=True)  #Sorting the blogs based on date in descending order to get the latest blogs first.
+    latest_blogs = sorted_blogs[:2]  #Getting the latest 2 blogs from the sorted list.
+    return render(request, "blogs/index.html", {"l_blogs": latest_blogs})  #Directly rendering html template without loading it first.
+   
+   
     # res_data = render_to_string("blogs/index.html")   #Rendering html template
     # return HttpResponse(res_data)
 
 def blogpost(request):
     list_item = ""
-    blog_list = list(blog_names.keys())   #Getting all the keys from dictionary in form of list.
-    
-    return render(request, "blogs/allposts.html", {"blogs": blog_list})
+    # blog_list = list(blog_names.keys())   #Getting all the keys from dictionary in form of list.
+    return render(request, "blogs/allposts.html", {"blogs": blog_details})
+    #We remove blog list and use blog_details list of dictionary to get all the details of blogs in one go and pass it to template directly. 
+
     # for b in blog_list: 
     #     blog_path = reverse("blog-post", args=[b])  #Using reverse function to get the url of blog post dynamically
     #     list_item += f'<li><a href="{blog_path}">{b.capitalize()}</a></li>'

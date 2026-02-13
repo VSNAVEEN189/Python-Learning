@@ -13,7 +13,7 @@
     <header>
    <h1><a href="{% url 'home' %}">Home page</a></h1>      <!-- Could directly be navigate to home page -->
    <nav>
-      <a href="" >All Posts</a>
+      <a href="{% url 'all-posts' %}" >All Posts</a>
    </nav>
 </header>  
     {% block body_content %}{% endblock %}

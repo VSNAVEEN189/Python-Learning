@@ -3,7 +3,7 @@ from .import views
 # We have to keep on adding urls here for every view we create in views.py of blogs app
 urlpatterns = [
     path("", views.home_page, name="home"),                           #Home page for blogs app  http:// and indidvidual urls also
-    path("allposts", views.blogpost),
+    path("allposts", views.blogpost, name="all-posts"),              #All posts page for blogs app http://
     # path("allposts/python-intro", views.python_intro),   #http://127.0.0.1:8000/blogs/allposts/python-intro
     # path("allposts/django-basics", views.django_basic),  #http://127.0.0.1:8000/blogs/allposts/django-basics
     # path("allposts/python-oops", views.python_oops),
