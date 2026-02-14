@@ -22,7 +22,7 @@ blog_details = [
         "title": "Python Introduction",
         "preview": """"Python is an open-source, high-level programming language that is used widely.
         Applications of pyhton are software development, data science, AI & ML, etc""",
-        "Content": #Will be usedd in individual blog post page
+        "Content": #Will be used in individual blog post page
         """Python is a versatile, high-level programming language known for its simple, English-like syntax and interpreted nature, making it ideal for rapid development""",
     }
     ,
@@ -103,6 +103,16 @@ def process_blog_name(blog):
     blog_list = blog.split("-")
     return " ".join(blog_list)
 
+
+
+def get_blog_by_slug(blog_url):
+    for blog in blog_details:
+        if blog["slug"] == blog_url:
+            return blog
+    return None
+
+
+
 # Blogpost views will be called for every blog there , In future to support more blogs by adding more elif conditions.
 # Used to capture the blog parameter 
 # Same identifier as used in urls.py should be used in the view function parameter
@@ -114,17 +124,19 @@ def blog_post(request, blog):
     # elif blog == "python-oops":
     #     res = "<h1>Object Oriented Programming with python</h1>"  
     # else:
-    try:        #To avoiding the error if blog not found in dictionary
-        res = blog_names[blog]
+    try:                              #To avoiding the error if blog not found in dictionary
+        res = get_blog_by_slug(blog)  #Getting the blog details by slug from the list of dictionary
         return render(request, "blogs/posts.html", {
-            "blog_text": res, "blog_name": process_blog_name(blog)})  #Rendering the template for blog post
+            "post": res})  #Rendering the template for blog post
+            # "blog_text": res, "blog_name": process_blog_name(blog)})  #Rendering the template for blog post
     except Exception:  
+        raise Http404()
+    
     #    res_data = render_to_string("404.html")  #Rendering the 404 template if blog not found in dictionary directly
     #    return HttpResponseNotFound(res_data)
     
     # Straight forward we can use http404
-        Http404("404.html")
-        raise Http404()  # Raising 404 error if blog not found in dictionary
+        # raise Http404()  # Raising 404 error if blog not found in dictionary
     # else:
     #    return HttpResponseNotFound(res_data)
 

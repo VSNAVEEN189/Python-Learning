@@ -1,4 +1,5 @@
 {% extends "blogs/base.html" %}
+{% load static %}
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><title> -->
   
   {% block page_title %}    
-    {{ blog_name|title}}
+    <!-- {{ blog_name|title}} -->
+    {{ post.title }}
   {% endblock %}  
   
 <!-- </title>
@@ -15,14 +17,27 @@
 <body> -->
 
 {% block body_content %}
-   {% include "blogs/includes/header.html" with active_page="Post" %}
+   <!-- {% include "blogs/includes/header.html" with active_page="Post" %} -->
 
+   <section>  
+      <h2>{{ post.title }}</h2>
+      <article> 
+        <img src="{% static 'blogs/images/' %}{{ post.image }}" alt="{{ post.title }}" />
+        <div>Posted on <time>{{ post.date|date:"d M Y" }}</time></div>
+      </article>
+   </section>
+
+   <main>
+      <p>{{ post.Content }}</p> 
+   </main>
+
+<!-- 
     <h1>{{ blog_name|title}} blog post</h1>
     {% if blog_text %}
       <h2>{{ blog_text }}</h2>   {# To fetch a special variable use {{ }} injecting dynamic content. #}
     {% else %}
       <h2>Blog is in progress.....</h2>
-    {% endif %}
+    {% endif %} -->
 {% endblock %}    
 
 
