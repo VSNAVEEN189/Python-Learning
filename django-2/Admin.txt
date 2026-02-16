@@ -1,0 +1,6 @@
+====ADMIN PANEL=====
+
+Provided by django to manage and provide administration model data
+Create super user command: python manage.py createsuperuser
+
+To let django know whom to add as a user we use admin.py in blogs folder of applications

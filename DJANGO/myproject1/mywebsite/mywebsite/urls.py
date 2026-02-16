@@ -22,3 +22,4 @@ urlpatterns = [
     # path('blogs/', include('blogs.urls')),
     path('', include('blogs.urls'))            #It prints home page of blogs app at root url http://, Later no need to add 'blogs/' in the url
 ]
+ 

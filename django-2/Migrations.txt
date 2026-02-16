@@ -15,3 +15,5 @@ Adding models and connecting
 tags = models.ManyToManyField(Tag)        
 #ManyToManyField is used to create a many-to-many relationship. In this case, one 
 post can have many tags and one tag can be associated with many posts.
+
+To make migration : python manage.py migrate
