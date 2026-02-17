@@ -4,3 +4,18 @@ Provided by django to manage and provide administration model data
 Create super user command: python manage.py createsuperuser
 
 To let django know whom to add as a user we use admin.py in blogs folder of applications
+
+=================================================
+# Helps to create few filters in the admin panel
+class PostAdmin(admin.ModelAdmin):
+    list_filters = ("author", "tags", "date")
+    list_display = ("title", "author", "date")
+
+Some specific variables has to be only use 
+list_filters, list_display, 
+For slug :prepopulated_fields in this we need to have a dictionary.
+===================================================
+
+Making the prepopulated slug field
+prepopulated_fields = {"slug": ("title",)}
+Helps string to get automate

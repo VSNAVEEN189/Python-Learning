@@ -29,7 +29,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     preview = models.CharField(max_length=200)
     content = models.TextField()
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now=True) 
     slug = models.SlugField(unique=True)
     image = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True) #ForeignKey is used to create a relationship between two tables. It is used to create a one-to-many relationship. In this case, one author can have many posts.

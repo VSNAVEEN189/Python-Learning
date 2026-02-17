@@ -1,0 +1,16 @@
+Querying the data from template
+
+Post.objects : Gets built in by django 
+This gives an object called query set returns all the blog post as a post object
+
+This line basically runs the query internally - Post.objects.all().order_by("-date")[:2]
+doesn't support negative indexing 
+
+==========================================================================
+Querying the data from template for individual blog post
+res = Post.objects.get(slug=blog)  
+
+For all post age
+blog_details = Post.objects.all()  #Getting all the blog details from the database using the post model.
+
+==========================================================================
