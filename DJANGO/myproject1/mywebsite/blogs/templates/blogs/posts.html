@@ -1,48 +1,39 @@
 {% extends "blogs/base.html" %}
 {% load static %}
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title> -->
-  
-  {% block page_title %}    
-    <!-- {{ blog_name|title}} -->
+{% block page_title %}    
     {{ post.title }}
-  {% endblock %}  
+{% endblock %}  
   
-<!-- </title>
-</head>
-<body> -->
 
 {% block body_content %}
-   <!-- {% include "blogs/includes/header.html" with active_page="Post" %} -->
-
+<!-- To use tags  -->
    <section>  
       <h2>{{ post.title }}</h2>
+      <div>
+         {% for tag in tags %}
+           <span>{{ tag }}</span>     
+         {% endfor %}</div>
+      </div>     
+<!-- To use tags  -->
+
       <article> 
         <img src="{% static 'blogs/images/' %}{{ post.image }}" alt="{{ post.title }}" />
+        <address>By <a href="mailto: {{ post.author.email }}">{{ post.author }}</a></address>
         <div>Posted on <time>{{ post.date|date:"d M Y" }}</time></div>
       </article>
    </section>
 
    <main>
-      <p>{{ post.Content }}</p> 
+      <p>{{ post.content }}</p> 
    </main>
 
-<!-- 
-    <h1>{{ blog_name|title}} blog post</h1>
-    {% if blog_text %}
-      <h2>{{ blog_text }}</h2>   {# To fetch a special variable use {{ }} injecting dynamic content. #}
-    {% else %}
-      <h2>Blog is in progress.....</h2>
-    {% endif %} -->
+    <section>
+        <form>
+           {{ comment_form }}
+            <button>Save</button>
+        </form>
+    </section>    
 {% endblock %}    
 
 
-<!-- </body>
-</html> -->
-
-
-<!-- title and add filter -->

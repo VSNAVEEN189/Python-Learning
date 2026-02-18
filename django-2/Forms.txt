@@ -1,0 +1,17 @@
+FORMS - 
+Can be used to interact with user and fetch data from them 
+will be able to add comments section in every blog page
+
+Have to create seprate section in models file
+
+Using forms module we use forms by importing 
+
+Have to create nested class in inside 
+class CommentForm(forms.Form):
+    class Meta:
+        
+
+__all__  #To include all the fields of the comment model in our form, we can also specify the fields that we want to include in our form by using a list of field names instead of "__all__".
+exclude = ["post"]  #To specify which fields we want to exclude from our form, we can use all to get all the fields of the model or we can specify the fields we want to exclude from our form. In this case, we are excluding post field of the comment model from our form because we will set it in the view when we save the form.
+
+For displaying the form we need to pass the form from posts,html template for individual 

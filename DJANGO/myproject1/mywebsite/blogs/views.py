@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponseNotFound
 from .models import Post    #importing the post model to get the blog details.
-
+from .forms import CommentForm  #importing the comment form to get the comment details from the user.
 
 def home_page(request):
     latest_blogs = Post.objects.all().order_by("-date")[:2]
@@ -18,8 +18,10 @@ def blogpost(request):
 # For individual blog post page.
 def blog_post(request, blog):
     try:                              #To avoiding the error if blog not found in dictionary
-        res = Post.objects.get(slug=blog)  #Gets one query only 
+        post_data = Post.objects.get(slug=blog)  #Gets one query only 
+        tag_caption = post_data.tags.all()  #To get all the tags associated with the blog post.
+        form_data = CommentForm()  #To create an instance of the comment form to display it in the template.
         return render(request, "blogs/posts.html", {
-            "post": res})  #Rendering the template for blog post
+            "post": post_data, "tags": tag_caption, "comment_form": form_data})  #Rendering the template for blog post
     except Exception:  
         raise Http404()

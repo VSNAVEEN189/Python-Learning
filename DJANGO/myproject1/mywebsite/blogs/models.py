@@ -35,3 +35,10 @@ class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True) #ForeignKey is used to create a relationship between two tables. It is used to create a one-to-many relationship. In this case, one author can have many posts.
     tags = models.ManyToManyField(Tag)        #ManyToManyField is used to create a many-to-many relationship. In this case, one post can have many tags and one tag can be associated with many posts.
     
+
+class Comment(models.Model):
+    user_name = models.CharField(max_length=50)
+    user_email = models.EmailField()
+    comment_text = models.TextField(max_length=400)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE) #ForeignKey is used to create a relationship between two tables. It is used to create a one-to-many relationship. In this case, one post can have many comments.
+
