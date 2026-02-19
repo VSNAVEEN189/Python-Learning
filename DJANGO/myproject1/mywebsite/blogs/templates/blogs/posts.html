@@ -29,7 +29,9 @@
    </main>
 
     <section>
-        <form>
+      <h2>Comments</h2>
+        <form action="{% url 'blog-post' post.slug %}" method ="POST">
+         {% csrf_token %}
            {{ comment_form }}
             <button>Save</button>
         </form>
