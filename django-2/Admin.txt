@@ -19,3 +19,5 @@ For slug :prepopulated_fields in this we need to have a dictionary.
 Making the prepopulated slug field
 prepopulated_fields = {"slug": ("title",)}
 Helps string to get automate
+
+related_name is set to use the inverse of the relation while querying the data

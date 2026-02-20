@@ -28,6 +28,18 @@
       <p>{{ post.content }}</p> 
    </main>
 
+   <!-- TO DISPLAY COMMENTS ON THE PAGE -->
+   <section>
+    <ul>
+     {% for comment in comments %}
+          <li>
+            <h3>{{ comment.comment_text }}</h3>
+            <p>Commented by {{ comment.user_name }}</p>
+          </li>
+     {% endfor %} 
+    </ul>
+   </section>
+
     <section>
       <h2>Comments</h2>
         <form action="{% url 'blog-post' post.slug %}" method ="POST">

@@ -21,8 +21,8 @@ def blogpost(request):
 def blog_post(request, blog):
     post_data = Post.objects.get(slug=blog)  #Gets one query only 
     tag_caption = post_data.tags.all() 
-
-
+    all_comments = post_data.comments.all().order_by("-id")  #To get all the comments for the blog post, we can use the related name "comments" that we defined in the comment model to get all the comments for the blog post.
+                                            #displaying comments in descending order of their id, so that the latest comment will be displayed first.
     if request.method == "POST":  
         commented_data = request.POST        #Fetching the user input
         form = CommentForm(commented_data)  #To create an instance of the comment form with the data submitted by the user.
@@ -32,11 +32,11 @@ def blog_post(request, blog):
             comment.save()               #Saving the comment to the database
             return HttpResponseRedirect(reverse("blog-post", args=[blog]))  #To redirect the user to the same blog post page after submitting the comment, it will redirect the user to the url of the blog post page with the slug of the blog post as an argument.
         return render(request, "blogs/posts.html", {
-            "post": post_data, "tags": tag_caption, "comment_form": form})  #Rendering the template for blog post with the form data if the form is not valid.
+            "post": post_data, "tags": tag_caption, "comment_form": form, "comments": all_comments})  #Rendering the template for blog post with the form data if the form is not valid.
     else:         #For GET
         try:                                         #To avoiding the error if blog not found in dictionary
             form_data = CommentForm()                #To create an instance of the comment form to display it in the template.
             return render(request, "blogs/posts.html", {
-                 "post": post_data, "tags": tag_caption, "comment_form": form_data})  #Rendering the template for blog post
+                 "post": post_data, "tags": tag_caption, "comment_form": form_data, "comments": all_comments})  #Rendering the template for blog post
         except Exception:  
             raise Http404()
