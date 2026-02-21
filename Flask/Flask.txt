@@ -1,0 +1,8 @@
+flask is a framework used for web based applications eg,pinterest,linkedin
+
+Making on registration form
+
+Bringing html to flask
+action- when we click a button it decide which page to redirect
+method- Getting the data, posting 
+
