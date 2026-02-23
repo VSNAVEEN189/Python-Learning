@@ -1,0 +1,4 @@
+Api - application programming interface, helps to communicate with another software 
+Rest api - representational state transfer 
+
+Serializers - used traslate django models into native data types in form of json 
