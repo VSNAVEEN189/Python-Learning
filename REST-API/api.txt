@@ -2,3 +2,12 @@ Api - application programming interface, helps to communicate with another softw
 Rest api - representational state transfer 
 
 Serializers - used traslate django models into native data types in form of json 
+
+Segregating into pages means - while we have so many post distribute it to several pages performance wont decrease
+
+Authentication- Only authenticated person can view and create post 
+
+filtering : Post and be sorted by username will get those post  filter_backends = [filters.SearchFilter]
+search filter : What ever is being searched will be fetched  search_fields = ['title', 'content']
+Date : By adding a widget inside the main class
+Based on the id : ascending is default for descending just adding filters.OrderingFilter in filter filter_backends
