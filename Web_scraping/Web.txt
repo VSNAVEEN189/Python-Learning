@@ -1,0 +1,27 @@
+It is a process of extracting the data from website.
+encode - It converts string unicode to bytes 
+decode - converting bytes to string unicode
+
+unicode characters and string - 
+ASCII - american standard code for information interchange supports only english
+
+Retrieving contents from webpages :Using library urllib it makes webpages look like a file.
+
+For bringing data: # # For bringing the data
+# import urllib.request  #To work with the urls and to open and read the urls
+# import urllib.parse    #parsing
+# import urllib.error    #Contains all the exception
+
+To get data 
+pip install requests 
+
+Stating data using dictionaries
+Get it from request headers - useeragent
+
+Content - Can download photos,videos from webpages in the form of bytes 
+
+Text - Represent the webpage in the form of string(text) in str.
+
+posting the data - using python requests
+
+parameters - It does 
