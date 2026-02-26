@@ -25,3 +25,20 @@ Text - Represent the webpage in the form of string(text) in str.
 posting the data - using python requests
 
 parameters - It does 
+ 
+=============FILTERING THE DATA FROM WEBSITE=============
+Filtering the data - using bs4- Used to filter data from html and xml files only necessary data.
+Using lxml - helps in easy handling of xml and html files.
+importing beautifulsoup from bs4 then adding a tag in responses for a part of data
+For a topic to be printed mention sub data also with main data
+To find data more deeply use a specific tag in the sub data.
+
+----List comphrension-----
+Gets the content only not the html by using  
+content = [heading.text for heading in h]
+print(content)
+
+----ADDING CONTENT-----
+with open("filename" , "w") as csv_file:  #Created the file
+        csv_write = csv.writer(csv_file)      #Enable it to write
+        csv_write.writerow(content)            #Adding the content
