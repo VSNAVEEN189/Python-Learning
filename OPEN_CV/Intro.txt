@@ -1,0 +1,28 @@
+Images - Represented by rows and columns determined by pixel value
+TYPES OF IMAGE:
+1. Binary- Consist of only black and whites 0-black 1- white 
+2. Black and white- It mixes together gives greyish clour 
+3. Bit - Represent colours by bit's from 1 to 32 bit
+   8-bit for web,jpegs,social media,Three channels Red,Green,Blue(RGB).
+   .png for logo
+==================================================================================
+Applications of Images
+Computer vision - Unlock mobile from face
+Artifical intelligence - Humanoid robots, Autonoumns
+Computer graphics - Editing modifing the Images  
+====================================================================================
+Installing open-cv
+Using - pip install opencv python
+======================================================================================
+Computer vision - Computer interprets the image to identify and classify the objects.
+Communication with images Ex: Face recongnition
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+Open-cv is a python library : open-source computer vision library.
+Used for computer vision with c,c++ programming languages
+Working: Recongnizes image based on the channels like rgb value 
+Applications: Autonoumns vehicles, Surveillance cameras, Identification of defective products.
+==============================================================================================
+Reading an image- Using cv2.imread(Followed by image path or location)
+Writing an image- cv2.imwrite(Followed by image path or location)
+Resizing an image-img.shape
+
