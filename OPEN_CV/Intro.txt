@@ -16,7 +16,10 @@ Using - pip install opencv python
 ======================================================================================
 Computer vision - Computer interprets the image to identify and classify the objects.
 Communication with images Ex: Face recongnition
+
+
 \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
 Open-cv is a python library : open-source computer vision library.
 Used for computer vision with c,c++ programming languages
 Working: Recongnizes image based on the channels like rgb value 
@@ -26,3 +29,22 @@ Reading an image- Using cv2.imread(Followed by image path or location)
 Writing an image- cv2.imwrite(Followed by image path or location)
 Resizing an image-img.shape
 
+
+Morphological operations - processing image based on shapes and edges 
+Types:
+1. Erosion - Removes the pixels on foreground objects using function cv2.erode(). Gives a blur image
+2. Dilation - Adds pixels using function cv2.dilate().
+3. Opening - Erosion followed by dilation using function cv2.mordphology(using attribute cv2.MORPH_OPEN).
+4. Closing - Dilation followed by erosion using function cv2.morphology(using attribute cv2.MORPH_CLOSE).
+5. Morphological gradient - states difference between dilation and erosion using function cv2.morphology(using attribute cv2.MORPH_GRADIENT).
+6. tOP HAT - Difference between input image and opening image using function  cv2.morphology(using attribute cv2.MORPH_TOPHAT).
+7. BLACK HAT - Difference between closing of input image and the input image using function cv2.morphology(using attribute cv2.MORPH_BLACKHAT)
+
+KERNEL -changing the value of pixel in form of array using import numpy
+
+Data Types of image - 
+uint - Unsigned integer most used 
+Unsigned no negative value, signed negative as well 2 positive.
+If image - 8-bit Unsigned   image displayed as it is 
+If image - 16/32 bit unsigned pixel is divided by 256, range[0,255]
+If image - 32-bit floating point , pixel-> multiplied by 256, range[0,1]
