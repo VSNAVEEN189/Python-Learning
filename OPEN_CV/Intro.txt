@@ -28,8 +28,7 @@ Applications: Autonoumns vehicles, Surveillance cameras, Identification of defec
 Reading an image- Using cv2.imread(Followed by image path or location)
 Writing an image- cv2.imwrite(Followed by image path or location)
 Resizing an image-img.shape
-
-
+==================================================================================
 Morphological operations - processing image based on shapes and edges 
 Types:
 1. Erosion - Removes the pixels on foreground objects using function cv2.erode(). Gives a blur image
@@ -48,3 +47,44 @@ Unsigned no negative value, signed negative as well 2 positive.
 If image - 8-bit Unsigned   image displayed as it is 
 If image - 16/32 bit unsigned pixel is divided by 256, range[0,255]
 If image - 32-bit floating point , pixel-> multiplied by 256, range[0,1]
+===========================================================================
+
+
+Resizing an image
+There are three ways
+1. Resizing only required dimension only the height is changed.
+2. Resizing both width and height 
+3. Resizing based on the aspect ratio -Scaling up->zooming in (more than 100), Scaling down->shrinking out (less than 100).
+Scaling up:
+Using interpolation cubic = INTER_CUBIC
+Using interpolation linear = INTER_LINEAR
+Scaling down:
+Using interpolation area = INTER_AREA
+using interpolation nearest = INTER_NEAREST
+To fill the empty pixels interpolation is used while scaling up and down regarding smoothnes.
+==============================================================================
+Shapes and text on image 
+
+Shifting an image -
+Transition arrays helps to denote x,y axis value so it shifts accordingly.
+
+Imgae Rotation - using cv2.getRotationMatrix2D(Followed by attribute)
+
+Thresholding - Takes value from channel 0 to 255 later that value is used in binary threshold,
+If it exceed the threshold value is white and below value is black
+
+Gausian blur - Reduces contrast between neighboring pixels using function cv2.GaussianBlur, both kernel has to be passed
+Median blur - Almost similar to gaussian this removes the centre pixel with actual pixel vale in surrounding.
+
+Bilateral filter - detects sharp edges and smoothnes , Depend on gaussian blur.
+using some of the attribute
+1. src - img as src
+2. d - diameter of the pixel neighborhood
+3. sigma color - prevents color to mix from each other keeps the distance between two colours
+4. sigma space - depends on diameter, pixel mixing 
+
+Edge detection -
+Canny edge detection - Helps to extract edges, noise reduction, Checks intensity of the image, no suppression, thresholding.
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
