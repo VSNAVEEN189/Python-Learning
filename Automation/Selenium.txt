@@ -1,0 +1,3 @@
+selenium - Mostly preferred for testing, helps in automating the repitative task.
+Installation using -> pip install selenium
+f
