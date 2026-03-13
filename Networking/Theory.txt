@@ -1,0 +1,48 @@
+Networking in python programming
+
+Basics of Networking:
+1. IP ADDRESS - It is an internet protocol address a numerical value is assigned to each device helps in communicating with internet 
+For website : Each server has it's own ip address google.com has an ip we connects to google using ip
+Finding IP : by cmd - ping website name 
+It is backed by a domain name 
+Types: 1. Static: Remains the same , mostly used by webserver websites like google
+       2. Dynamic: It changes
+ISP assigns a dynamic IP to our device (Internet service provider) keeps on changing
+3. Public IP: Used to connect with public netwok like internet. 
+4. Private IP: Used for communicaton within local network, Assigned to individual device
+Local network like the router connected to the devices at home it assigns a private ip then public ip on router is used to connect to the facebook server
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+To connect to server we also need port number.
+2. Port - It is an communication endpoint, Each device has its own ports , Each ports functions differently.
+IP is Residential address, Port Number is house number.
+IP states the server which we want to connect, Port states the location on server which we need to connect.
+Kind of a usb port
+
+Port Number     Protocol / Service (Full Form & Purpose)
+20	          FTP – File Transfer Protocol – Used for transferring data files between client and server
+21	          FTP – File Transfer Protocol – Used for command control during file transfer
+22	          SSH – Secure Shell – Provides secure remote login and encrypted communication
+23	          Telnet – Teletype Network – Remote login service that sends data as unencrypted text
+25	          SMTP – Simple Mail Transfer Protocol – Used for sending and routing emails
+53	          DNS – Domain Name System – Translates domain names (like google.com) into IP addresses
+67, 68	      DHCP – Dynamic Host Configuration Protocol – Automatically assigns IP addresses to devices in a network
+80	          HTTP – Hypertext Transfer Protocol – Standard protocol used for loading web pages on the internet
+110	          POP3 – Post Office Protocol Version 3 – Retrieves emails from a mail server to a client device
+119	          NNTP – Network News Transfer Protocol – Used for distributing and retrieving Usenet news articles
+123	          NTP – Network Time Protocol – Synchronizes time between computers on a network
+143	          IMAP – Internet Message Access Protocol – Allows accessing and managing emails directly on the server
+161	          SNMP – Simple Network Management Protocol – Used for monitoring and managing network devices
+194	          IRC – Internet Relay Chat – Protocol used for real-time text messaging/chat
+443	          HTTPS – Hypertext Transfer Protocol Secure – Secure web communication using encryption (TLS/SSL)
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/
+
+3.Sockets - Endpoint in communication flow between two program running over a network, They allow communication between two different processes running on the same machines
+Socket address = IP address + Port number , To establish a connection between two ports is done by socket.
+Steps involved:
+1. Create a socket for communication.
+2. Bind it with IP address and the port number of the receiver.
+3. Sends a message via socket.
+
