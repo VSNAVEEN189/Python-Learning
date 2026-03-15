@@ -7,10 +7,12 @@ PORT = 12345
 
 s.connect((HOST_NAME, PORT))
 
-message = "Hello Server"
-s.send(message.encode())
-
-reply = s.recv(1024)
-print("Server says:", reply.decode())
-
-s.close()
+while True: 
+    message = '' 
+    while True:
+        msg = s.recv(10)     
+        if len(msg)<=0:
+            break
+        message += msg.decode("utf-8")
+    if len(message)>0:
+       print(message)

@@ -27,7 +27,7 @@ Port Number     Protocol / Service (Full Form & Purpose)
 23	          Telnet – Teletype Network – Remote login service that sends data as unencrypted text
 25	          SMTP – Simple Mail Transfer Protocol – Used for sending and routing emails
 53	          DNS – Domain Name System – Translates domain names (like google.com) into IP addresses
-67, 68	      DHCP – Dynamic Host Configuration Protocol – Automatically assigns IP addresses to devices in a network
+67, 68	          DHCP – Dynamic Host Configuration Protocol – Automatically assigns IP addresses to devices in a network
 80	          HTTP – Hypertext Transfer Protocol – Standard protocol used for loading web pages on the internet
 110	          POP3 – Post Office Protocol Version 3 – Retrieves emails from a mail server to a client device
 119	          NNTP – Network News Transfer Protocol – Used for distributing and retrieving Usenet news articles
@@ -46,3 +46,7 @@ Steps involved:
 2. Bind it with IP address and the port number of the receiver.
 3. Sends a message via socket.
 
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\
+
+Buffer - It makes sure tat the data is divided into small chunks and each chunk is downloaded easily
+They are measured in buffersize 
