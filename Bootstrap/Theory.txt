@@ -1,0 +1,18 @@
+A html,css,js, framework helps website's to adapt with the screen sizze of any device  mainly in mobile-responsive websites.
+Makes sites run faster, Has set of classes
+One shoulld have a basic understanding of html,css before using it.
+Know as responsive web-desinging
+
+We can insert the css file in hmtl via include cdn css link from the bootstrap website.
+
+Bootstrap grid system-
+A grid is intersection of vertical and horizontal lines
+A way of placing element onto a website  in given 12 columns
+
+
+col- (extra small devices screen width less than 576px)
+col-sm- (small devices screen width equal to or greater than 576px)
+col-md- (medium devices screen width equal to or greater than 768px)
+col-lg- (large devices -screen width equal to or greater than 992px)
+col-xl- (xlarge devices screen width equal to or greater than 1200p>)
+
