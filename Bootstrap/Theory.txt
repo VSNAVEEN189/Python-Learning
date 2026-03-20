@@ -16,3 +16,7 @@ col-md- (medium devices screen width equal to or greater than 768px)
 col-lg- (large devices -screen width equal to or greater than 992px)
 col-xl- (xlarge devices screen width equal to or greater than 1200p>)
 
+Grid column offset - Helps leave space in  left hand size of the column
+
+Making the image responsive - Using class="img-fluid"
+To make the image align - Using class="float-right"
