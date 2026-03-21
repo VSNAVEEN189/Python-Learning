@@ -1,0 +1,2 @@
+Regx - a sequence of characters which define a search pattern.
+\n is a special charcters, r turns the full statement in to full string.
