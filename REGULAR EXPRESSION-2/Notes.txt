@@ -1,2 +1,12 @@
 Regx - a sequence of characters which define a search pattern.
 \n is a special charcters, r turns the full statement in to full string.
+
+Meta character - a special set of characters which doesn't match themselves instead they create some pattern which should be matched 
+They allow us to create complex patterns which can be match  instead of simply matching strings 
+for eg: *,+,{...},.,?,^,
+
+1. * - This means a character must be present 0 or more times  eg :"ab*c" abbc, abbbbc.
+2. + - This means a character must be present at least one time eg :"ab+c" 
+b can be present multiple times but it should appear at least once 
+3. {} - This hepls to repeat a particular character as many no.of times as the value inside the bracket.
+4. . - This means . symbol can take place of any other symbol "a.b" any single character can take place between a and b. 
