@@ -10,3 +10,11 @@ for eg: *,+,{...},.,?,^,
 b can be present multiple times but it should appear at least once 
 3. {} - This hepls to repeat a particular character as many no.of times as the value inside the bracket.
 4. . - This means . symbol can take place of any other symbol "a.b" any single character can take place between a and b. 
+5. ? - This means ? optional metacharacter a character preciding it is optional 
+6. ^ - This means ^ caret actually set position for match it tells computer that match must start from this particular point.
+
+Character classes - 
+1. d - Pattern should match any digit character. 
+\d should consist only digits, \D should match any non-digit character
+\w can match with any alpha numeric character used in website useername with set of rules 
+[]- Helps to find a set of characters matches a certain range of characters lowercase and uppercase also
