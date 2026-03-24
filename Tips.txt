@@ -1,0 +1,10 @@
+1. Understand - Concepts,logic 
+2. Practice - Revision is must and practicing the programs 
+3. Syntax & basics - Differs with programming language 
+4. Problem statements - Use github while error or use ai tools for some ideation, To find some logic from others people 
+5. Keep it simple - Never complicate your program everybody should be able to read the program.
+
+Logical thinking
+1. Solving problems - Break problem into parts, use flowcharts 
+2. Practicing - To enhance capability of logical thinking practicing problems is must
+3. Projects - Working on projects develop programming skills 
