@@ -1,0 +1,2 @@
+Enter the student's name: Charlie
+Charlie's marks: 92
