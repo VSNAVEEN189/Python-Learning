@@ -1,0 +1,8 @@
+Enter some text to write to the file: write
+Data successfully written to output.txt.
+Enter additional text to append: the name
+Data successfully appended.
+
+Final content of output.txt:
+write
+the name
